@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Social Media Sentiment Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" as="style">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1><i class="fa-solid fa-stroopwafel"></i> Sentiment</h1>
+            <div class="mobile-menu-toggle">&#9776;</div>
+        </div>
+        
+        <!-- Overview -->
+        <div id="overview">
+            <div class="metrics-grid">
+                <div class="metric-card">
+                    <h3>Total Posts Analyzed</h3>
+                    <p id="totalPosts">0</p>
+                </div>
+                <div class="metric-card" style="color: #4CAF50;">
+                    <h3>Positive Sentiment</h3>
+                    <p id="positivePercentage">0%</p>
+                </div>
+                <div class="metric-card" style="color: #EF5350;">
+                    <h3>Negative Sentiment</h3>
+                    <p id="negativePercentage">0%</p>
+                </div>
+                <div class="metric-card" style="color: #FFA726;">
+                    <h3>Neutral Sentiment</h3>
+                    <p id="neutralPercentage">0%</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Analyzer -->
+        <div class="main-content">
+            <div class="analyzer-section">
+                <div class="input-container">
+                    <textarea id="input" placeholder="Enter your social media post..."></textarea>
+                    <button onclick="analyzePost()" class="analyze-btn">Analyze Sentiment</button>
+                </div>
+            </div>
+
+            <!-- History and stats -->
+            <div class="dashboard-grid">
+                <div class="posts-section">
+                    <h2>Recent Posts</h2>
+                    <div id="postsContainer" class="posts-container"></div>
+                    <div class="pagination">
+                        <button id="prevPage" onclick="changePage(-1)" disabled>Previous</button>
+                        <span id="pageIndicator">Page 1</span>
+                        <button id="nextPage" onclick="changePage(1)">Next</button>
+                    </div>
+                </div>
+                
+                <div class="stats-section">
+                    <h2>Sentiment Distribution</h2>
+                    <div class="chart-container">
+                        <canvas id="sentimentChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

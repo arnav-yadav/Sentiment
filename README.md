@@ -1,7 +1,7 @@
 # Sentiment
 
 ## Project Overview
-A web-based sentiment analysis dashboard that leverages Google's Gemini AI to analyze text sentiment in real-time. You can input a sentence and it analyzes the sentiment of statement as positive, negative or neutral. 
+A web-based multi language sentiment analysis dashboard that leverages Google's Gemini AI to analyze text sentiment in real-time. You can input a sentence and it analyzes the sentiment of statement as positive, negative or neutral. 
 
 ## [Website Link](https://arnav-yadav.github.io/Sentiment/)
 
@@ -41,7 +41,7 @@ A web-based sentiment analysis dashboard that leverages Google's Gemini AI to an
 ### API Integration
 ```javascript
 async function analyzeSentimentWithGemini(text) {
-    const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent?key=${process.env.GEMINI_API_KEY}`;
+    const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent?key=${gemini}`;
     // API implementation details...
 }
 ```
